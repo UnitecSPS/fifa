@@ -1,0 +1,10 @@
+%h1 Listado de Countries
+= form_tag countries_path, id: "countries_filter", method: :get, remote: true do |f|
+  %p
+    = text_field_tag :q
+    = submit_tag "Filter", id: "submit_filter"
+
+.js_country_table
+  = render partial: "list", locals: { countries: @countries }
+
+= link_to "New Country", new_country_path

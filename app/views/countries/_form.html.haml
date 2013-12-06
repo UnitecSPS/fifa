@@ -1,0 +1,12 @@
+= form_for @country do |f|
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :federation_name
+    = f.text_field :federation_name
+  %p
+    = f.label :ranking
+    = f.text_field :ranking
+  %p
+    = f.submit

@@ -1,0 +1,19 @@
+%h1= @country.name
+%p
+  %strong Federation:
+  = @country.federation_name
+%p
+  %strong Ranking
+  = @country.ranking
+
+%h2 Listado de Players
+
+<ul class: "clas">
+%ul.js_country_players
+  - @country.players.each do |player|
+    %li= player.name
+= form_for [@country, Player.new], remote: true do |f|
+  %p
+    = f.label :name
+    = f.text_field :name
+    = f.submit
